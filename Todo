@@ -1,0 +1,12 @@
+BUG AND PERFORMANCE
+- Update Renderer2D Indices once at init
+- Auto Atlas Size for Fonts (Not always 1014*1014) for better RAM usage
+
+
+
+- Sprite Renderer Component
+
+- Frame Renderer for render on hover or render for like 30 frames
+
+
+- maby every component has list wichts renders on hover or on click
