@@ -26,7 +26,7 @@ void TestScene::OnLoad() {
 
     homeButton->SetBaseColor({0.2,0.3,0.4,1.0});
     homeButton->SetPosition({200,300});
-    homeButton->SetFont(Fusion::GetFont("font",Fusion::GetCurrentWindow()));
+    homeButton->SetFont(Fusion::GetFont("font","window2"));
     homeButton->SetText("Home");
     homeButton->SetBorderThickness(3);
     homeButton->SetBorderBaseColor({1.0,1.0,1.0,1.0});
@@ -49,7 +49,7 @@ void TestScene::OnLoad() {
     startButton->SetBaseColor({0.8,0.3,0.3,1.0});
     startButton->SetPosition({100,200});
     startButton->SetSize({200,80});
-    startButton->SetFont(Fusion::GetFont("fon2",Fusion::GetCurrentWindow()));
+    startButton->SetFont(Fusion::GetFont("fon2","window2"));
     startButton->SetText("Home");
     startButton->SetBorderThickness(0);
     startButton->SetBorderBaseColor({1.0,1.0,1.0,1.0});
@@ -62,7 +62,7 @@ void TestScene::OnLoad() {
     startButton2->SetBaseColor({0.0,0.0,0.0,0.0});
     startButton2->SetPosition({350,200});
     startButton2->SetSize({100,40});
-    startButton2->SetFont(Fusion::GetFont("font",Fusion::GetCurrentWindow()));
+    startButton2->SetFont(Fusion::GetFont("font","window2"));
     startButton2->SetText("Home");
     startButton2->SetBorderThickness(3);
     startButton2->SetBorderBaseColor({1.0,1.0,1.0,1.0});
@@ -107,21 +107,13 @@ int main() {
 
     bool activate = false;
     bool running = true;
+
+    Fusion::LoadScene("test","window2");
+
     while (true) {
         Fusion::Begin();
 
         Fusion::Update();
-
-        if(Fusion::GetIO("window2")->OnMouseScroll){
-            activate = !activate;
-            if(activate){
-                Fusion::LoadScene("test","window2");
-            }else{
-                Fusion::LoadScene("test2","window2");
-            }
-        }
-
-
 
 
         Fusion::Render();

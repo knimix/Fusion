@@ -7,7 +7,9 @@ file(GLOB_RECURSE SOURCE_FILES Fusion/*.h Fusion/*.cpp Fusion/*.c)
 
 include_directories(Fusion/Libraries/STB/include)
 include_directories(Fusion/Libraries/Glad/include)
+if(WIN32)
 include_directories(Fusion/Libraries/GLFW/include)
+endif()
 include_directories(Fusion/Libraries/Math/include)
 
 if (WIN32)
@@ -54,3 +56,22 @@ else()
     set_target_properties(Fusion PROPERTIES SUFFIX ".so")
 endif()
 
+project(Sandbox)
+
+set(CMAKE_CXX_STANDARD 20)
+
+file(GLOB_RECURSE SOURCE_FILES Executable/*.cpp Executable/*.h Executable/*.c)
+
+include_directories(../Fusion)
+
+if (WIN32)
+    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Windows/lib)
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Windows/lib)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR/Windows}/bin)
+else()
+    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Linux/lib)
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Linux/lib)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Linux/bin)
+endif()
+
+add_executable(Sandbox ${SOURCE_FILES} Executable/main.cpp)
