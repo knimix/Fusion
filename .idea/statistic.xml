@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Statistic">
+    <option name="fileTypes" value="class;svn-base;svn-work;Extra;gif;png;jpg;jpeg;bmp;tga;tiff;ear;war;zip;jar;iml;iws;ipr;bz2;gz;internal;a;bin;txt;rsp;obj;check_cache;cbp;dll;exe;make;marks;log;cmake;includecache;" />
+    <option name="excludeDotArtifactDirectory" value="true" />
+    <option name="excludedDirectories">
+      <list>
+        <option value="$PROJECT_DIR$/Fusion/Libraries" />
+        <option value="$PROJECT_DIR$/Build" />
+        <option value="$PROJECT_DIR$/Export" />
+      </list>
+    </option>
+  </component>
+</project>

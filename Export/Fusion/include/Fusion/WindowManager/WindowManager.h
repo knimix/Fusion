@@ -4,6 +4,7 @@
 #include <Math/Vector/Vec2/Vec2.h>
 #include "../Components/Component.h"
 #include "../Font/Font.h"
+#include "../Scene/Scene.h"
 namespace Fusion{
     void FUSION_API CreateWindow(WindowDesign* design, const char* name);
     void FUSION_API DestroyWindow(const char* name);
@@ -17,9 +18,12 @@ namespace Fusion{
     void AddTexture(const char* path,const char* name, const char* window, bool dynamic);
     GL::TextureData* GetTexture(const char* name, const char* window);
     void AddFont(const char* path, int fontSize, const char* name, const char* window, bool dynamic);
-    Fusion::Font* GetFont(const char* name, const char* window);
+    const Fusion::Font* GetFont(const char* name, const char* window);
 
-
+    void AddScene(const char* name, Scene* scene, const char* window);
+    void LoadScene(const char* scene, const char* window);
+    void UnloadScene(const char* scene, const char* window);
+    Scene* GetCurrentScene(const char* window);
     void FUSION_API Begin();
     void FUSION_API Update();
     void FUSION_API Render();

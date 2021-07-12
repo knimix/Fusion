@@ -10,6 +10,7 @@ namespace Fusion{
         inline const stbtt_packedchar * GetFontData() const {return m_FontData;}
         inline const stbtt_fontinfo* GetFontInfo() const {return m_FontInfo;}
         inline const unsigned int GetFontTexture() const {return m_FontTexture;}
+        bool m_IsCreated = false;
     private:
         const char* m_Path = nullptr;
         int m_FontSize = 0;

@@ -6,7 +6,7 @@ namespace Fusion{
     class FUSION_API ComponentList{
     public:
         ComponentList() = default;
-        void AddComponent(Component* component,const char* name,bool dynamic);
+        bool AddComponent(Component* component,const char* name,bool dynamic);
         Component* GetComponent(const char* name);
         void Update(const IO* io,bool& onInput);
         void Render(Renderer2D* renderer);

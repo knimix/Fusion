@@ -1,5 +1,5 @@
 #pragma once
-#include "Fusion/Core/Core.h"
+#include "../Core/Core.h"
 #include "Math/Vector/Vec4/Vec4.h"
 namespace Fusion{
     struct FUSION_API WindowDesign{

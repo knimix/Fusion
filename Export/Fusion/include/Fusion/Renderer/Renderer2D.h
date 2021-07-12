@@ -24,7 +24,7 @@ namespace Fusion{
         void Flush();
         void DrawQuad(const Math::Vec2& position, const Math::Vec2& size, const Math::Vec4& color, const Math::Vec4& radius, float borderThickness, const Math::Vec4& borderColor, GL::TextureData* textureData = nullptr, bool decorated = true);
         void DrawLine(const Math::Vec2& pointA, const Math::Vec2& pointB, float thickness, const Math::Vec4& color);
-        void DrawString(const char* text, Font* font, const Math::Vec2& position, const Math::Vec2& size, const Math::Vec4& color, int textArrangement = FUSION_TEXT_ARRANGEMENT_CENTERED);
+        void DrawString(const char* text,const Font* font, const Math::Vec2& position, const Math::Vec2& size, const Math::Vec4& color, int textArrangement = FUSION_TEXT_ARRANGEMENT_CENTERED);
     private:
         struct Vertex {
             Math::Vec2 Position;
@@ -51,8 +51,6 @@ namespace Fusion{
         std::array<int,MaxQuadCount> m_QuadDecoration{};
         std::array<Math::Vec4,MaxQuadCount> m_QuadCutoff{};
 
-        std::vector<uint32_t> m_Indices;
-        int m_IndexOffset = 0;
         uint32_t m_IndexCount = 0;
 
         std::array<uint32_t, MaxTextures> m_TextureSlots{};
