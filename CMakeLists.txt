@@ -40,8 +40,8 @@ if (WIN32)
 target_link_libraries(Fusion ${CMAKE_CURRENT_SOURCE_DIR}/Fusion/Libraries/GLFW/bin/GLFW.a ${CMAKE_CURRENT_SOURCE_DIR}/Fusion/Libraries/Math/Windows/Math.dll)
 link_libraries(Fusion ${CMAKE_CURRENT_SOURCE_DIR}/Fusion/Libraries/GLFW/bin/GLFW.a ${CMAKE_CURRENT_SOURCE_DIR}/Fusion/Libraries/Math/Windows/Math.dll)
 else()
-    target_link_libraries(Fusion glfw3 ${CMAKE_CURRENT_SOURCE_DIR}/Fusion/Libraries/Math/Linux/Math.so)
-    link_libraries(Fusion glfw3 ${CMAKE_CURRENT_SOURCE_DIR}/Fusion/Libraries/Math/Linux/Math.so)
+    target_link_libraries(Fusion glfw ${CMAKE_CURRENT_SOURCE_DIR}/Fusion/Libraries/Math/Linux/Math.so)
+    link_libraries(Fusion glfw ${CMAKE_CURRENT_SOURCE_DIR}/Fusion/Libraries/Math/Linux/Math.so)
 
 endif()
 
@@ -54,22 +54,3 @@ else()
     set_target_properties(Fusion PROPERTIES SUFFIX ".so")
 endif()
 
-project(Sandbox)
-
-set(CMAKE_CXX_STANDARD 20)
-
-file(GLOB_RECURSE SOURCE_FILES Fusion/*.cpp Fusion/*.h Fusion/*.c)
-
-include_directories(../Fusion)
-
-if (WIN32)
-    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Windows/lib)
-    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Windows/lib)
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR/Windows}/bin)
-else()
-    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Linux/lib)
-    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Linux/lib)
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR/Linux}/bin)
-endif()
-
-add_executable(Sandbox ${SOURCE_FILES} Executable/main.cpp)

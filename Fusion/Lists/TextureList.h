@@ -1,6 +1,7 @@
 #pragma once
 #include "../Core/Core.h"
 #include <map>
+#include <string>
 #include "../GL/GLTexture/GLTexture.h"
 namespace Fusion{
     class FUSION_API TextureList{

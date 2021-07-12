@@ -1,5 +1,5 @@
 #include "TextureList.h"
-
+#include <string>
 void Fusion::TextureList::AddTexture(const char* path, const char* name, bool dynamic) {
     if(m_DynamicTextures.count(name) || m_StaticTextures.count(name)){
         return;

@@ -1,6 +1,7 @@
 #pragma once
 #include "../Font/Font.h"
 #include <map>
+#include <string>
 namespace Fusion{
     class FUSION_API FontList {
     public:
