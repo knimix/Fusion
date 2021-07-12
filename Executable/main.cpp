@@ -108,7 +108,7 @@ int main() {
     bool activate = false;
     bool running = true;
 
-    Fusion::LoadScene("test","window2");
+    Fusion::LoadScene("test2","window2");
 
     while (true) {
         Fusion::Begin();
