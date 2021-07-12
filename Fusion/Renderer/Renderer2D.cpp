@@ -41,7 +41,7 @@ Fusion::Renderer2D::Renderer2D(Fusion::IO* io) {
     for (size_t i = 0; i < MaxTextures; i++) {
         m_TextureSlots[i] = 0;
     }
-    GL::CreateShader("../../../Fusion/Shader/Vertex.glsl", "../../../Fusion/Shader/Fragment.glsl", m_QuadShader);
+    GL::CreateShader("../../../../Fusion/Shader/Vertex.glsl", "../../../../Fusion/Shader/Fragment.glsl", m_QuadShader);
     GL::BindShader(m_QuadShader);
     GL::SetUniformInt(m_QuadShader, "F_Texture0", 0);
     GL::SetUniformInt(m_QuadShader, "F_Texture1", 1);
